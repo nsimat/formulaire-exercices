@@ -1,0 +1,10 @@
+.myemail {
+  display: flex;
+  align-content: space-around;
+}
+
+.mypassword {
+  display: flex;
+  align-items: normal;
+
+}

@@ -1,0 +1,39 @@
+<h2>Login</h2>
+<form #loginForm="ngForm" (ngSubmit)="loginForm.valid && login()">
+    <div class="myemail">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="user.email"
+        #emailCtrl="ngModel"
+        required
+        email
+        >
+
+        @if(emailCtrl.invalid && (emailCtrl.dirty || emailCtrl.touched)){
+          <span class="error-msg">
+            The email address is required and must be valid.
+          </span>
+        }
+    </div>
+    <div class="mypassword">
+      <label for="passwrd">Password</label>
+      <input
+        type="password"
+        name="password"
+        [(ngModel)]="user.password"
+        #passwordCtrl="ngModel"
+        required
+        minlength="6"
+        >
+
+        @if(passwordCtrl.invalid && (passwordCtrl.dirty || passwordCtrl.touched)){
+          <span class="error-msg">
+            The password is required (with at least 6 characters long).
+          </span>
+        }
+    </div>
+    <button type="submit" [disabled]="loginForm.invalid">Se connecter</button>
+</form>
