@@ -1,7 +1,7 @@
 <h2>Login</h2>
 <form #loginForm="ngForm" (ngSubmit)="loginForm.valid && login()">
     <div class="myemail">
-      <label for="email">Email</label>
+      <label for="email">Email: </label>
       <input
         type="email"
         id="email"
@@ -19,7 +19,7 @@
         }
     </div>
     <div class="mypassword">
-      <label for="passwrd">Password</label>
+      <label for="passwrd">Password: </label>
       <input
         type="password"
         name="password"
